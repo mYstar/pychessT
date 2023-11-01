@@ -1,0 +1,38 @@
+// TODO: cleanup
+
+// definition: sizes for desktop version
+$desktop-header-height: 50px;
+$desktop-game-width: 300px;
+$desktop-game-title-height: 106px;
+$desktop-comment-height: 135px;
+$desktop-grid-gaps: 15px;
+// calculated values for grid definition
+$desktop-fixed-height: $desktop-header-height + 2*$desktop-grid-gaps;
+
+// definitions: sizes for tablet version
+$medium-header-height: 40px;
+$medium-game-height: 120px;
+$medium-min-comment-height: 145px;
+$medium-grid-gaps: 10px;
+// calculate middle line between comment and board
+$medium-max-board-height: calc(100% 
+  - $medium-header-height
+  - $medium-game-height
+  - $medium-grid-gaps*3
+  - $medium-min-comment-height);
+$medium-max-comment-height: calc(100%
+  - $medium-header-height
+  - $medium-game-height
+  - $medium-grid-gaps*3
+  - 100vw);
+
+// colors
+$background: #D2D2D2;
+$highlight_100: #57B5FF;
+$highlight_60: mix($highlight_100, white, 60%);
+$highlight_40: mix($highlight_100, white, 40%);
+$field_dark: #B58863;
+$field_light: #F0D9B5;
+$shadow: rgba(0, 0, 0, 0.25);
+$game-gradient-from: rgba(200, 200, 200, 1);
+$game-gradient-to: rgba(255,255,255,0);

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-lg">
+
+    <div class="fs-1 m-3">{% block title %}Games{% endblock %}
+        {% if g.user %}
+        <a class="btn btn-primary mx-3 mb-1" href="{{ url_for('game.create') }}">New Game</a>
+        {% endif %}
+    </div>
+
+    <div class="container-lg my-3">
+        <div class="row border-bottom">
+            <div class="col"><strong>ID</strong></div>
+            <div class="col"><strong>title</strong></div>
+            <div class="col"><strong>white player</strong></div>
+            <div class="col"><strong>black player</strong></div>
+            <div class="col"><strong>played </strong></div>
+            <div class="col"><strong>Actions</strong></div>
+        </div>
+        {% for game in games %}
+        <div class="row border-bottom align-items-center py-1">
+            <div class="col">{{ game['id'] }}</div>
+            <div class="col">{{ game['title'] }}</div>
+            <div class="col">{{ game['white_first_name'] }} {{ game['white_last_name'] }}</div>
+            <div class="col">{{ game['black_first_name'] }} {{ game['black_last_name'] }}</div>
+            <div class="col">{{ game['played_on'].strftime('%Y-%m-%d') }}</div>
+            <div class="col"><a class="btn btn-primary btn-sm" href="{{ url_for('index') }}{{ game['id'] }}"><i class="bi bi-play-fill"></i></a></div>
+        </div>
+        {% if g.user['id'] == game['author_id'] %}
+        <!--          <a class="action" href="\{\{ url_for('game.update', id=game['id']) \}\}">Edit</a>-->
+        {% endif %}
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+// fonts
+@font-face {
+  font-family: 'Questrial';
+  src: url('../fonts/Questrial-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Tinos';
+  src: url('../fonts/Tinos-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Tinos';
+  src: url('../fonts/Tinos-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Tinos';
+  src: url('../fonts/Tinos-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Tinos';
+  src: url('../fonts/Tinos-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-display: block;
+  font-family: "bootstrap-icons";
+  src: url("bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2"),
+url("bootstrap-icons/font/fonts/bootstrap-icons.woff") format("woff");
+}

@@ -1,0 +1,10 @@
+.venv/
+.idea/
+
+*.pyc
+
+instance/
+fonts/
+chesst/static/
+
+node_modules/

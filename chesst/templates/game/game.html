@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Game{% endblock %}
+
+{% block content %}
+<div id="game" class="game container-lg p-0">
+    <div id="documentation" class="documentation bg-body shadow rounded">
+        {% include 'game/documentation.html' %}
+    </div>
+
+    <div id="board-container" class="board">
+        {% include 'game/board.html' %}
+    </div>
+</div>
+<div class="comments container-lg bg-body shadow rounded my-3 p-0">
+    {% include 'game/comments.html' %}
+</div>
+{% endblock %}

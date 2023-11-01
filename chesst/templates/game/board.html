@@ -1,0 +1,23 @@
+<div id="board">
+    <div></div>
+    {% for character in board_marking_x %}
+    <div class="fs-3 text-center text-body-tertiary">{{ character }}</div>
+    {% endfor %}
+    <div></div>
+
+    {% for number in board_marking_y %}
+        {% set outer_loop = loop %}
+        <div class="fs-3 text-center text-body-tertiary">{{ number }}</div>
+        {% for character in board_marking_x %}
+            <div id="{{character + number|string}}" class="field {{'dark' if outer_loop.index%2 + loop.index%2 == 1 else 'light'}}">
+            </div>
+        {% endfor %}
+        <div class="fs-3 text-center text-body-tertiary">{{ number }}</div>
+    {% endfor %}
+
+    <div></div>
+    {% for character in board_marking_x %}
+    <div class="fs-3 text-center text-body-tertiary">{{ character }}</div>
+    {% endfor %}
+    <div></div>
+</div>

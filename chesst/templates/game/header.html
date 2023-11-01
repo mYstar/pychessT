@@ -1,0 +1,25 @@
+<div class="container">
+    <a class="navbar-brand" href="{{ url_for('index') }}">ChessT</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            {% if g.user %}
+            <span class="navbar-text text-center"><i class="bi bi-person-circle fs-5"></i> {{ g.user['username'] }}</span>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{{ url_for('auth.logout') }}" title="Logout"><i class="bi bi-power ms-3 fs-5"></i></a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link{{ ' active' if route == url_for('auth.register') else ''}}" aria-current="page" href="{{ url_for('auth.register') }}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link{{ ' active' if route == url_for('auth.login') else ''}}" aria-current="page" href="{{ url_for('auth.login') }}">Login</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+.comments {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+
+    @include media-breakpoint-up(sm) {
+        --comment-margin-x: #{map-get($spacers, 4)};
+        width: calc(100% - 2*var(--comment-margin-x));
+        margin: var(--comment-margin-x);
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin: auto;
+    }
+
+    > #highlight {
+        position: relative;
+        min-width: 60px;
+
+        > img {
+            content: url("../img/comment_bg_white.png");
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    > #text-section {
+    font-family: "Tinos", serif;
+
+        .writer > .avatar {
+            content: url("../img/avatar.svg");
+            vertical-align: text-bottom;
+        }
+    }
+}

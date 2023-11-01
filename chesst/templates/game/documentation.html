@@ -1,0 +1,27 @@
+<div id="doc-title"
+     class="doc-title fs-4 fw-bolder fs-italic lh-sm p-lg-4 bg-white border-bottom border-2 border-primary-subtle z-1">
+    Game: <br> {{ player_1 }} vs.<br> {{ player_2 }}
+</div>
+<div class="move-gradient move-gradient-left z-0"></div>
+<div class="move-gradient move-gradient-right z-0"></div>
+<div id="doc-moves">
+    <div class="doc-moves fs-4 ps-lg-4 z-1">
+        {% for move in moves %}
+        <div class="move-number p-0">{{ loop.index }}.</div>
+        <div class="move-white px-lg-3">
+        <span>
+            {{ move.white }}
+            {{' <span class="position-absolute top-20 translate-middle p-1 ms-1 bg-primary opacity-75 rounded-circle">
+                </span>'|safe if move.white_comment|length > 0 else ''}}
+        </span>
+        </div>
+        <div class="move-black ps-lg-1">
+        <span>
+            {{ move.black }}
+            {{' <span class="position-absolute top-20 translate-middle p-1 ms-1 bg-primary opacity-75 rounded-circle">
+                </span>'|safe if move.black_comment|length > 0 else ''}}
+        </span>
+        </div>
+        {% endfor %}
+    </div>
+</div>
